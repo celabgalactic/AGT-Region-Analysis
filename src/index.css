@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./NMSFuturaProBook_Kerned.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-agt-orange: #FFB451;
+  --font-sans: "CustomFont", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "CustomFont", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: "CustomFont", "Inter", sans-serif;
+  }
+}
+
+/* Custom scrollbar in hex color E25530 */
+.settings-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.settings-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+.settings-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #E25530;
+  border-radius: 9999px;
+}
+.settings-scrollbar {
+  scrollbar-color: #E25530 rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+}
+
+.input-glow:focus {
+  box-shadow: 0 0 15px rgba(255, 5, 0, 0.2);
+}
+
+@keyframes spinY {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.animate-spin-y-composite {
+  animation: spinY 2s linear infinite;
+  will-change: transform;
+}
+
